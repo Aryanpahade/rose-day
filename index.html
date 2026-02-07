@@ -2,37 +2,55 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Rose Day Surprise</title>
+<title>Happy Rose Day Desha 🌹</title>
+
 <style>
     body {
         margin: 0;
         height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: linear-gradient(135deg, #ffdde1, #ee9ca7);
         font-family: 'Segoe UI', sans-serif;
         overflow: hidden;
+
+        background-image: url('background.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.45);
+        z-index: 1;
     }
 
     .container {
+        position: relative;
+        z-index: 2;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         text-align: center;
+        color: white;
     }
 
     button {
-        padding: 18px 35px;
+        padding: 18px 36px;
         font-size: 22px;
         border: none;
         border-radius: 50px;
         background: #d10047;
         color: white;
         cursor: pointer;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        transition: transform 0.3s;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+        transition: transform 0.3s, background 0.3s;
     }
 
     button:hover {
         transform: scale(1.1);
+        background: #ff2f70;
     }
 
     .rose {
@@ -45,8 +63,17 @@
     .text {
         font-size: 26px;
         margin-top: 20px;
-        color: #6b001f;
+        max-width: 80%;
         display: none;
+        animation: fadeIn 2s ease forwards;
+    }
+
+    .from {
+        margin-top: 15px;
+        font-size: 20px;
+        display: none;
+        animation: fadeIn 2.5s ease forwards;
+        opacity: 0.9;
     }
 
     @keyframes grow {
@@ -59,16 +86,35 @@
             opacity: 1;
         }
     }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
 </style>
 </head>
 
 <body>
+
+<div class="overlay"></div>
+
 <div class="container">
     <button onclick="giveRose()">HAPPY ROSE DAY DESHA 🌹</button>
 
     <div class="rose" id="rose">🌹</div>
+
     <div class="text" id="text">
-        Just like a rose, you make everything around you more beautiful ❤️
+        JUST LIKE A ROSE, YOU MAKE EVERYTHING AROUND YOU MORE BEAUTIFUL ❤️
+    </div>
+
+    <div class="from" id="from">
+        — From Aryan 💖
     </div>
 </div>
 
@@ -76,7 +122,9 @@
 function giveRose() {
     document.getElementById("rose").style.display = "block";
     document.getElementById("text").style.display = "block";
+    document.getElementById("from").style.display = "block";
 }
 </script>
+
 </body>
 </html>
