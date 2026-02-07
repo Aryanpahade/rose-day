@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Rose Day Surprise</title>
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+        font-family: 'Segoe UI', sans-serif;
+        overflow: hidden;
+    }
+
+    .container {
+        text-align: center;
+    }
+
+    button {
+        padding: 18px 35px;
+        font-size: 22px;
+        border: none;
+        border-radius: 50px;
+        background: #d10047;
+        color: white;
+        cursor: pointer;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        transition: transform 0.3s;
+    }
+
+    button:hover {
+        transform: scale(1.1);
+    }
+
+    .rose {
+        font-size: 120px;
+        margin-top: 30px;
+        display: none;
+        animation: grow 1.5s ease forwards;
+    }
+
+    .text {
+        font-size: 26px;
+        margin-top: 20px;
+        color: #6b001f;
+        display: none;
+    }
+
+    @keyframes grow {
+        from {
+            transform: scale(0);
+            opacity: 0;
+        }
+        to {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+</style>
+</head>
+
+<body>
+<div class="container">
+    <button onclick="giveRose()">HAPPY ROSE DAY DESHA 🌹</button>
+
+    <div class="rose" id="rose">🌹</div>
+    <div class="text" id="text">
+        Just like a rose, you make everything around you more beautiful ❤️
+    </div>
+</div>
+
+<script>
+function giveRose() {
+    document.getElementById("rose").style.display = "block";
+    document.getElementById("text").style.display = "block";
+}
+</script>
+</body>
+</html>
